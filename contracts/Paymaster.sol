@@ -72,7 +72,7 @@ contract Paymaster is Ownable {
 
         if (
             pricings[pricingId].period == 0 ||
-            payments[payer].timestamp + pricings[pricingId].period <
+            payments[payer].timestamp + pricings[pricingId].period >
             block.timestamp
         ) {
             return (pricingId, true);
